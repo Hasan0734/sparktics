@@ -15,6 +15,16 @@ const OurProcess = () => {
           gravida mollis tortor quis porttitor.
         </p>
       </div>
+      <div className="mt-[100px]">
+        <div >
+          <h3 className="text-[24px] font-semibold leading-[32px] text-[#00588A]">
+            Opportunity
+          </h3>
+          <div>
+
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
