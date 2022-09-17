@@ -3,6 +3,9 @@ import Navbar from "../components/Navbar/Navbar";
 import Welcome from "../components/HomeHeader/HomeHeader";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
+import { Tag } from "../public/assets/Icon";
+import OurServices from "../components/OurServices/OurServices";
+import OurProcess from "../components/OurProcess/OurProcess";
 
 export default function Home() {
   const vidRef = useRef();
@@ -11,8 +14,8 @@ export default function Home() {
   }, []);
   return (
     <Layout>
-      <div className="max-w-[1440px] mx-auto bg-[#E6F5FD] ">
-        <div className=" px-[52px] ">
+      <div className="max-w-[1448px] mx-auto bg-[#E6F5FD] ">
+        <div className=" px-[112px] ">
           <Navbar />
           <Welcome title={"Mobile Application."} />
         </div>
@@ -45,11 +48,15 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="bg-[#E6F5FD] max-w-[1440px] mx-auto py-14">
-        <h3 className="font-semibold text-[36px] leading-[43px] text-[#00588A] text-center">
-          What we do
-        </h3>
+      <div className="max-w-[1448px] mx-auto ">
+        <div className="bg-[#E6F5FD]  py-14">
+          <h3 className="font-semibold text-[36px] leading-[43px] text-[#00588A] text-center">
+            What we do
+          </h3>
+        </div>
+        <OurServices />
       </div>
+      <OurProcess />
     </Layout>
   );
 }

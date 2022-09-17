@@ -3,7 +3,7 @@ import React from "react";
 
 const HomeHeader = ({ title }) => {
   return (
-    <div className="max-w-[1440px] mx-auto px-[52px] pt-[151px] pb-[126px]">
+    <div className="max-w-[1448px] mx-auto px-[52px] pt-[151px] pb-[126px]">
       <div className="flex items-center gap-5">
         <h3 className="font-semibold text-[24x] leading-7 text-[#243479]">
           Welcome, Good Morning
