@@ -12,7 +12,7 @@ const menus = [
 const Navbar = () => {
   return (
     <nav className=" ">
-      <div className="pt-12 flex items-center justify-between">
+      <div className="py-12 flex items-center justify-between">
         {/* logo start */}
         <div className="flex gap-3 items-center">
           <Image
