@@ -1,7 +1,30 @@
+import Image from "next/image";
 import React from "react";
 import Footer from "../components/Footer/Footer";
 import Layout from "../components/Layout/Layout";
 import Navbar from "../components/Navbar/Navbar";
+
+const works = [
+  { id: 1, type: "logo", image: "/assets/logo.png", company: "company name" },
+  {
+    id: 2,
+    type: "branding",
+    image: "/assets/logo.png",
+    company: "company name",
+  },
+  {
+    id: 3,
+    type: "website",
+    image: "/assets/logo.png",
+    company: "company name",
+  },
+  {
+    id: 4,
+    type: "video",
+    image: "/assets/thumbline.png",
+    company: "company name",
+  },
+];
 
 export default function work() {
   return (
@@ -68,9 +91,59 @@ export default function work() {
             </li>
           </ul>
         </div>
+        <div className="flex flex-wrap mt-20">
+          {works.map((work) => (
+            <div key={work.id} className=" w-[304px] h-[230px] border relative">
+              <div className="absolute left-0 z-20 p-4">
+                <h3
+                  className={`font-normal text-[14px] ${
+                    work.type === "logo" ||
+                    work.type === "branding" ||
+                    work.type === "website"
+                      ? "text-[#00588A]"
+                      : "text-white"
+                  } leading-[17px]`}
+                >
+                  # {work.type} / {work.company}
+                </h3>
+              </div>
+              <div className="flex justify-center h-full items-center">
+                <Image
+                  src={work.image}
+                  width={
+                    work.type === "logo" ||
+                    work.type === "branding" ||
+                    work.type === "website"
+                      ? 159
+                      : 302
+                  }
+                  height={
+                    work.type === "logo" ||
+                    work.type === "branding" ||
+                    work.type === "website"
+                      ? 109
+                      : 228
+                  }
+                  alt="work images"
+                />
+              </div>
+            </div>
+          ))}
+
+          <div className="text-center w-full mt-[60px]">
+            <button
+              className=" px-6 py-4
+             border-[#00588A] border-[0.6px]
+            font-[800] text-[20px] leading-[24px] 
+            text-[#0180BC] rounded-full shadow-[4px_6px_6px_-2px_rgba(0,88,138,0.2)]"
+            >
+              View More
+            </button>
           </div>
-          
-          <Footer/>
+        </div>
+      </div>
+
+      <Footer />
     </Layout>
   );
 }
