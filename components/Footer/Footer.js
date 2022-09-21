@@ -24,7 +24,7 @@ const Footer = () => {
           <source src="/footer-video.mp4" type="video/mp4" />
           Your browser does not support HTML5 video.
         </video>
-        <div className="absolute top-1/4 bottom-2/4 left-[112px] justify-center">
+        <div className="absolute top-1/4 bottom-2/4 left-6 md:left-[112px] justify-center">
           <div className=" w-[320px]">
             <div className="flex gap-3 items-center">
               <h4 className="text-white font-semibold text-[36px] leading-[44px]">

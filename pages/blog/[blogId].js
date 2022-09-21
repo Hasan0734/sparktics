@@ -22,7 +22,7 @@ const SingleBlog = () => {
   return (
     <Layout>
       <div className="max-w-[1448px] mx-auto">
-        <div className="bg-[#E6F5FD] px-[52px]">
+        <div className="bg-[#E6F5FD] px-6 md:px-[52px]">
           <Navbar />
         </div>
       </div>
@@ -31,7 +31,7 @@ const SingleBlog = () => {
       </div>
       <div
         className="max-w-[1448px] mx-auto
-       bg-white px-[112px] py-[52px]"
+       bg-white px-6 md:px-[112px] py-[52px]"
       >
         <h1 className="text-[#00588A] font-semibold text-[36px] leading-[44px]">
           {blog?.name}

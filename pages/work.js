@@ -44,16 +44,16 @@ export default function Work() {
 
       <Layout>
         <div className="max-w-[1448px] mx-auto">
-          <div className="bg-[#E6F5FD] px-[52px]">
+          <div className="bg-[#E6F5FD] px-6 md:px-[52px]">
             <Navbar />
           </div>
         </div>
-        <div className="max-w-[1448px] mx-auto bg-white px-[112px] py-[52px]">
+        <div className="max-w-[1448px] mx-auto bg-white px-6 md:px-[112px] py-[52px]">
           <div className="">
             <h2 className="font-semibold text-[36px] leading-[44px] text-[#00588A]">
               Work
             </h2>
-            <p className="mt-[25px] font-normal text-[16px] leading-[24px] text-[#00588A]">
+            <p className="mt-[25px] font-normal text-[16px] leading-[24px] text-[#00588A] text-justify">
               Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec
               tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis
               vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae
@@ -62,7 +62,7 @@ export default function Work() {
             </p>
           </div>
           <div className="mt-8">
-            <ul className="flex gap-3">
+            <ul className="flex flex-wrap gap-3">
               <li>
                 <button
                   className="bg-[#00588A] rounded-full text-[16px]
@@ -113,7 +113,7 @@ export default function Work() {
                   setIsOpen(true);
                 }}
                 key={work.id}
-                className=" w-[304px] h-[230px] border relative"
+                className=" w-full md:w-[304px] h-[230px] border relative"
               >
                 <div className="absolute left-0 z-20 p-4">
                   <h3

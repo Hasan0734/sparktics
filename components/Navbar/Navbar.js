@@ -31,7 +31,7 @@ const Navbar = () => {
         {/* MENU START*/}
 
         <div className="flex items-center gap-3">
-          <ul className="flex gap-2">
+          <ul className=" gap-2 hidden md:flex">
             {menus.map((menu) => (
               <li key={menu.id} className="">
                 <Link href={menu.url}>
