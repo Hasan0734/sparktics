@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { MenuIcon } from "../../public/assets/Icon";
+import Sidebar from "../Sidebar/Sidebar";
 
 const menus = [
   { id: 1, name: "Work", url: "/work" },
@@ -10,6 +11,7 @@ const menus = [
   { id: 4, name: "Lets Connect", url: "/connect" },
 ];
 const Navbar = () => {
+  const [sidebar, setSidebar] = useState(false);
   return (
     <nav className=" ">
       <div className="py-12 flex items-center justify-between">
@@ -42,8 +44,15 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <div>
-            <MenuIcon />
+          <div className="relative">
+            <button onClick={() => setSidebar(!sidebar)}>
+              {" "}
+              <MenuIcon />
+            </button>
+            
+              <div className={`${sidebar ? "block" : 'hidden'} `}>
+                <Sidebar setSidebar={setSidebar} sidebar={sidebar} />
+              </div>
           </div>
         </div>
         {/* MENU END*/}

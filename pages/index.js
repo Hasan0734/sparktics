@@ -23,7 +23,6 @@ export default function Home() {
           <Welcome title={"Mobile Application."} />
         </div>
         <div className="h-[298px] md:h-[567px] w-full relative object-cover overflow-hidden">
-
           <video
             className="object-cover"
             ref={vidRef}
