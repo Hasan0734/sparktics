@@ -2,7 +2,7 @@ import React from "react";
 
 const OurProcess = () => {
   return (
-    <div className="max-w-[1448px] mx-auto  px-[112px] pt-[80px] pb-[60px] bg-[#E6F5FD]">
+    <div className="max-w-[1448px] mx-auto px-6 md:px-[112px] pt-[80px] pb-[60px] bg-[#E6F5FD]">
       <div>
         <h3 className="text-[36px] leading-[42px] font-semibold text-[#00588A]">
           Our Process
