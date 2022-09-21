@@ -19,9 +19,9 @@ const Footer = () => {
           style={{
             clipPath: "polygon(0 9%, 100% 0%, 102% 100%, 0% 100%)",
             width: "100%",
-          }}
+          }}   
         >
-          <source src="footer-video.mp4" type="video/mp4" />
+          <source src="/footer-video.mp4" type="video/mp4" />
           Your browser does not support HTML5 video.
         </video>
         <div className="absolute top-1/4 bottom-2/4 left-[112px] justify-center">
