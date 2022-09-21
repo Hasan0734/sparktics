@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "name": "Teja aka",
+    "title": "The Boss",
+    "gender": "male",
+    "position": "Co-Founder",
+    "image": "/assets/member.png",
+    "describe": "Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae ultricies metus, at condimentum nulla. Donec quis ornare lacus."
+  },
+  {
+    "id": 2,
+    "name": "Sample aka",
+    "title": "Sample",
+    "gender": "female",
+    "position": "Profile / Position",
+    "image": "/assets/female-em.png",
+    "describe": "Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae ultricies metus, at condimentum nulla. Donec quis ornare lacus."
+  },
+  {
+    "id": 3,
+    "name": "Sample aka",
+    "title": "Sample",
+    "gender": "female",
+    "position": "Profile / Position",
+    "image": "/assets/member.png",
+    "describe": "Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae ultricies metus, at condimentum nulla. Donec quis ornare lacus."
+  },
+  {
+    "id": 4,
+    "name": "Sample aka",
+    "title": "Sample",
+    "gender": "female",
+    "position": "Profile / Position",
+    "image": "/assets/member.png",
+    "describe": "Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae ultricies metus, at condimentum nulla. Donec quis ornare lacus."
+  },
+  {
+    "id": 5,
+    "name": "Sample aka",
+    "title": "Sample",
+    "gender": "female",
+    "position": "Profile / Position",
+    "image": "/assets/member.png",
+    "describe": "Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae ultricies metus, at condimentum nulla. Donec quis ornare lacus."
+  },
+  {
+    "id": 6,
+    "name": "Sample aka",
+    "title": "Sample",
+    "gender": "female",
+    "position": "Profile / Position",
+    "image": "/assets/member.png",
+    "describe": "Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae ultricies metus, at condimentum nulla. Donec quis ornare lacus."
+  },
+  {
+    "id": 7,
+    "name": "Sample aka",
+    "title": "Sample",
+    "gender": "female",
+    "position": "Profile / Position",
+    "image": "/assets/member.png",
+    "describe": "Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae ultricies metus, at condimentum nulla. Donec quis ornare lacus."
+  },
+  {
+    "id": 8,
+    "name": "Sample aka",
+    "title": "Sample",
+    "gender": "female",
+    "position": "Profile / Position",
+    "image": "/assets/member.png",
+    "describe": "Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae ultricies metus, at condimentum nulla. Donec quis ornare lacus."
+  },
+  {
+    "id": 9,
+    "name": "Sample aka",
+    "title": "Sample",
+    "gender": "female",
+    "position": "Profile / Position",
+    "image": "/assets/member.png",
+    "describe": "Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae ultricies metus, at condimentum nulla. Donec quis ornare lacus."
+  }
+]

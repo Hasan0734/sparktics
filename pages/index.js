@@ -40,7 +40,7 @@ export default function Home() {
               {" "}
               <div className="flex justify-center">
                 <Image
-                  src="/rocket-send-2.svg"
+                  src="/paper-rocket.svg"
                   alt="Picture of the author"
                   width={48}
                   height={49}
