@@ -19,13 +19,13 @@ const Footer = () => {
           style={{
             clipPath: "polygon(0 9%, 100% 0%, 102% 100%, 0% 100%)",
             width: "100%",
-          }}   
+          }}
         >
           <source src="/footer-video.mp4" type="video/mp4" />
           Your browser does not support HTML5 video.
         </video>
         <div className="absolute top-1/4 bottom-2/4 left-6 md:left-[112px] justify-center">
-          <div className=" w-[320px]">
+          <div className=" max-w-[320px]">
             <div className="flex gap-3 items-center">
               <h4 className="text-white font-semibold text-[36px] leading-[44px]">
                 Lets connect
@@ -69,7 +69,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="pt-[100px]">
-            <ul className="flex gap-10">
+            <ul className="flex flex-wrap gap-10">
               <li>
                 <Link href="/about">
                   <a className="font-semibold text-white text-[24px] leading-[29px] ">

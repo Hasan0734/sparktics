@@ -16,17 +16,19 @@ const Navbar = () => {
     <nav className=" ">
       <div className="py-12 flex items-center justify-between">
         {/* logo start */}
-        <div className="flex gap-3 items-center">
-          <Image
-            src="/logo.svg"
-            alt="Picture of the author"
-            width={48}
-            height={49}
-          />
-          <h3 className="text-[36px] text-[#00588A] leading-[44px] font-normal">
-            Spark<span className="text-[#0180BC]">tics</span>
-          </h3>
-        </div>
+        <Link href="/">
+          <a className="flex gap-3 items-center">
+            <Image
+              src="/logo.svg"
+              alt="Picture of the author"
+              width={48}
+              height={49}
+            />
+            <h3 className="text-[36px] text-[#00588A] leading-[44px] font-normal">
+              Spark<span className="text-[#0180BC]">tics</span>
+            </h3>
+          </a>
+        </Link>
 
         {/* logo end */}
 
@@ -49,10 +51,10 @@ const Navbar = () => {
               {" "}
               <MenuIcon />
             </button>
-            
-              <div className={`${sidebar ? "block" : 'hidden'} `}>
-                <Sidebar setSidebar={setSidebar} sidebar={sidebar} />
-              </div>
+
+            <div className={`${sidebar ? "block" : "hidden"} `}>
+              <Sidebar setSidebar={setSidebar} sidebar={sidebar} />
+            </div>
           </div>
         </div>
         {/* MENU END*/}
