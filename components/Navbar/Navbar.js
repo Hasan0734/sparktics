@@ -14,17 +14,16 @@ const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
   return (
     <nav className=" ">
-      <div className="py-12 flex items-center justify-between">
+      <div className="py-6 md:py-12 flex items-center justify-between">
         {/* logo start */}
         <Link href="/">
-          <a className="flex gap-3 items-center">
-            <Image
+          <a className="flex gap-2 md:gap-3 items-center">
+            <img
               src="/logo.svg"
               alt="Picture of the author"
-              width={48}
-              height={49}
+              className="w-6 h-6 md:w-10 md:h-10"
             />
-            <h3 className="text-[36px] text-[#00588A] leading-[44px] font-normal">
+            <h3 className="text-[20px] md:text-[36px] text-[#00588A] leading-6 md:leading-[44px] font-normal">
               Spark<span className="text-[#0180BC]">tics</span>
             </h3>
           </a>

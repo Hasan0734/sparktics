@@ -15,7 +15,7 @@ export default function Home() {
   }, []);
   return (
     <Layout>
-      <div className="max-w-[1448px] mx-auto bg-[#E6F5FD] ">
+      <div className="max-w-[1448px] mx-auto bg-transparent md:bg-[#E6F5FD] ">
         <div className=" px-6 md:px-[52px]">
           <Navbar />
         </div>

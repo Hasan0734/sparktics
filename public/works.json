@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Company Name",
+    "type": "Logo",
+    "url": "",
+    "images": ["/assets/logo.png"]
+  },
+  {
+    "id": 2,
+    "name": "Company Name",
+    "type": "Branding",
+    "url": "",
+    "images": ["/assets/logo.png"]
+  },
+  {
+    "id": 3,
+    "name": "Company Name",
+    "type": "Website",
+    "url": "",
+    "images": ["/assets/website.png"]
+  },
+  {
+    "id": 4,
+    "name": "Company Name",
+    "type": "Video",
+    "url": "",
+    "images": ["/assets/thumbline.png"]
+  }
+]

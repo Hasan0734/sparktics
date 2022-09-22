@@ -22,12 +22,16 @@ const SingleBlog = () => {
   return (
     <Layout>
       <div className="max-w-[1448px] mx-auto">
-        <div className="bg-[#E6F5FD] px-6 md:px-[52px]">
+        <div className="bg-transparent md:bg-[#E6F5FD] px-6 md:px-[52px]">
           <Navbar />
         </div>
       </div>
       <div className="max-w-[1448px] mx-auto">
-        <img className="w-full h-[413px] object-fill" src={ blog?.image} alt="blog image" />
+        <img
+          className="w-full h-[413px] object-fill"
+          src={blog?.image}
+          alt="blog image"
+        />
       </div>
       <div
         className="max-w-[1448px] mx-auto

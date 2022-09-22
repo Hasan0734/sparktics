@@ -170,7 +170,7 @@ const AboutUs = () => {
       )}
       <Layout>
         <div className="max-w-[1448px] mx-auto">
-          <div className="bg-[#E6F5FD] px-6 md:px-[52px]">
+          <div className="bg-transparent md:bg-[#E6F5FD] px-6 md:px-[52px]">
             <Navbar />
           </div>
         </div>
@@ -195,9 +195,9 @@ const AboutUs = () => {
                   </div>
                 </div>
                 <div className="mt-[76px] grid grid-cols-3 gap-y-16 gap-x-[320px]">
-                  {/* {employee?.map((em) => (
+                  {employee?.map((em) => (
                     <Employee key={em.id} employee={em} />
-                  ))} */}
+                  ))}
                 </div>
                 <div className="mt-[165px] text-center">
                   <p className="font-normal text-[20px] leading-[24px] text-[#00588A]">

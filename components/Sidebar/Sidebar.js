@@ -21,8 +21,8 @@ export default function Sidebar({ sidebar, setSidebar }) {
     >
       <OutsideClickHandler onOutsideClick={() => setSidebar(false)}>
         <div
-          className={` w-screen md:w-[538px] bg-[#00588AB2] backdrop-blur-[27.1828px]
-           h-screen px-11 md:px-[60px] pt-[40px] md:pt-[57px] relative`}
+          className={`w-screen md:w-[538px] bg-[#00588AB2] backdrop-blur-[27.1828px]
+           h-screen px-11 md:px-[60px] pb-6 pt-6 md:pt-[57px] relative`}
         >
           <div className="flex justify-end">
             <svg
@@ -58,7 +58,7 @@ export default function Sidebar({ sidebar, setSidebar }) {
                 </li>
               ))}
             </ul>
-            <hr className="borderr border-[#F2F2F2]" />
+            <hr className="border border-[#F2F2F2]" />
 
             <ul className="">
               {moreMenu.map((menu) => (

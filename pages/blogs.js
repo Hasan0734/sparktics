@@ -20,7 +20,7 @@ const Blogs = () => {
   return (
     <Layout>
       <div className="max-w-[1448px] mx-auto">
-        <div className="bg-[#E6F5FD] px-6 md:px-[52px]">
+        <div className="bg-transparent md:bg-[#E6F5FD] px-6 md:px-[52px]">
           <Navbar />
         </div>
       </div>
@@ -39,7 +39,10 @@ const Blogs = () => {
         </div>
         <div className="mt-[70px]">
           {blogs.map((blog, i) => (
-            <div key={blog.id} className="block md:flex gap-6 items-center mb-8">
+            <div
+              key={blog.id}
+              className="block md:flex gap-6 items-center mb-8"
+            >
               <div className="flex justify-center md:justify-start my-3 md:my-0">
                 <div className="bg-[#CCEFFFB2] rounded-full p-3 w-[206px] h-[206px]">
                   <Image

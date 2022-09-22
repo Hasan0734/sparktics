@@ -1,35 +1,21 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../components/Footer/Footer";
 import Layout from "../components/Layout/Layout";
 import Modal from "../components/Modal/Modal";
 import Navbar from "../components/Navbar/Navbar";
 
-const works = [
-  { id: 1, type: "logo", image: "/assets/logo.png", company: "company name" },
-  {
-    id: 2,
-    type: "branding",
-    image: "/assets/logo.png",
-    company: "company name",
-  },
-  {
-    id: 3,
-    type: "website",
-    image: "/assets/logo.png",
-    company: "company name",
-  },
-  {
-    id: 4,
-    type: "video",
-    image: "/assets/thumbline.png",
-    company: "company name",
-  },
-];
-
 export default function Work() {
   const [isOpen, setIsOpen] = useState(false);
   const [image, setImage] = useState("");
+  const [works, setWorks] = useState([]);
+  const [selectedType, setSelectedType] = useState("all");
+
+  useEffect(() => {
+    fetch("/works.json")
+      .then((res) => res.json())
+      .then((data) => setWorks(data));
+  }, []);
 
   return (
     <>
@@ -44,11 +30,11 @@ export default function Work() {
 
       <Layout>
         <div className="max-w-[1448px] mx-auto">
-          <div className="bg-[#E6F5FD] px-6 md:px-[52px]">
+          <div className="bg-transparent md:bg-[#E6F5FD] px-6 md:px-[52px]">
             <Navbar />
           </div>
         </div>
-        <div className="max-w-[1448px] mx-auto bg-white px-6 md:px-[112px] py-[52px]">
+        <div className="max-w-[1448px] mx-auto bg-white px-6 md:px-[112px] py-10 md:py-[52px]">
           <div className="">
             <h2 className="font-semibold text-[36px] leading-[44px] text-[#00588A]">
               Work
@@ -65,6 +51,7 @@ export default function Work() {
             <ul className="flex flex-wrap gap-3">
               <li>
                 <button
+                  onClick={() => setSelectedType("all")}
                   className="bg-[#00588A] rounded-full text-[16px]
                text-white leading-[20px] font-semibold px-6 py-[10px]"
                 >
@@ -73,6 +60,7 @@ export default function Work() {
               </li>
               <li>
                 <button
+                  onClick={() => setSelectedType("logo")}
                   className="border rounded-full text-[16px]
                text-[#00588A] leading-[20px] font-semibold px-5 py-[10px]"
                 >
@@ -81,6 +69,7 @@ export default function Work() {
               </li>
               <li>
                 <button
+                  onClick={() => setSelectedType("branding")}
                   className="border rounded-full text-[16px]
                text-[#00588A] leading-[20px] font-semibold px-5 py-[10px]"
                 >
@@ -89,6 +78,7 @@ export default function Work() {
               </li>
               <li>
                 <button
+                  onClick={() => setSelectedType("video")}
                   className="border rounded-full text-[16px]
                text-[#00588A] leading-[20px] font-semibold px-5 py-[10px]"
                 >
@@ -97,6 +87,7 @@ export default function Work() {
               </li>
               <li>
                 <button
+                  onClick={() => setSelectedType("website")}
                   className="border rounded-full text-[16px]
                text-[#00588A] leading-[20px] font-semibold px-5 py-[10px]"
                 >
@@ -106,50 +97,70 @@ export default function Work() {
             </ul>
           </div>
           <div className="flex flex-wrap mt-20">
-            {works.map((work) => (
-              <div
-                onClick={() => {
-                  setImage(work.image);
-                  setIsOpen(true);
-                }}
-                key={work.id}
-                className=" w-full md:w-[304px] h-[230px] border relative"
-              >
-                <div className="absolute left-0 z-20 p-4">
-                  <h3
-                    className={`font-normal text-[14px] ${
-                      work.type === "logo" ||
-                      work.type === "branding" ||
-                      work.type === "website"
-                        ? "text-[#00588A]"
-                        : "text-white"
-                    } leading-[17px]`}
+            {selectedType !== "all" &&
+              works
+                .filter((wr) => wr.type.toLowerCase() === selectedType)
+                .map((work) => (
+                  <div
+                    onClick={() => {
+                      setImage(work.images[0]);
+                      setIsOpen(true);
+                    }}
+                    key={work.id}
+                    className=" w-full md:w-[304px] h-[230px] border relative"
                   >
-                    # {work.type} / {work.company}
-                  </h3>
+                    <div className="absolute left-0 z-20 p-4">
+                      <h3
+                        className={`font-normal text-[14px] 
+                      ${work.type === "Logo" ? "text-[#00588A]" : ""}
+                      ${work.type === "Branding" ? "text-[#00588A]" : ""}
+                      ${work.type === "Website" ? "text-white" : ""}
+                      ${work.type === "Video" ? "text-white" : ""}
+                       leading-[17px]`}
+                      >
+                        # {work.type} / {work.name}
+                      </h3>
+                    </div>
+                    <div className="flex justify-center items-center">
+                      <img
+                        src={work.images[0]}
+                        className="w-full h-[230px] md:h-full"
+                        alt="work images"
+                      />
+                    </div>
+                  </div>
+                ))}
+            {selectedType === "all" &&
+              works.map((work) => (
+                <div
+                  onClick={() => {
+                    setImage(work.images[0]);
+                    setIsOpen(true);
+                  }}
+                  key={work.id}
+                  className=" w-full md:w-[304px] h-[230px] border relative"
+                >
+                  <div className="absolute left-0 z-20 p-4">
+                    <h3
+                      className={`font-normal text-[14px] 
+                      ${work.type === "Logo" ? "text-[#00588A]" : ""}
+                      ${work.type === "Branding" ? "text-[#00588A]" : ""}
+                      ${work.type === "Website" ? "text-white" : ""}
+                      ${work.type === "Video" ? "text-white" : ""}
+                       leading-[17px]`}
+                    >
+                      # {work.type} / {work.name}
+                    </h3>
+                  </div>
+                  <div className="flex justify-center items-center">
+                    <img
+                      src={work.images[0]}
+                      className="w-full h-[230px] md:h-full"
+                      alt="work images"
+                    />
+                  </div>
                 </div>
-                <div className="flex justify-center h-full items-center">
-                  <Image
-                    src={work.image}
-                    width={
-                      work.type === "logo" ||
-                      work.type === "branding" ||
-                      work.type === "website"
-                        ? 159
-                        : 302
-                    }
-                    height={
-                      work.type === "logo" ||
-                      work.type === "branding" ||
-                      work.type === "website"
-                        ? 109
-                        : 228
-                    }
-                    alt="work images"
-                  />
-                </div>
-              </div>
-            ))}
+              ))}
 
             <div className="text-center w-full mt-[60px]">
               <button
