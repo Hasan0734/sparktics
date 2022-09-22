@@ -16,14 +16,13 @@ const moreMenu = [
 export default function Sidebar({ sidebar, setSidebar }) {
   return (
     <aside
-      className="fixed h-screen top-0 left-0 right-0
-       
+      className="fixed h-screen top-0 left-0 right-0      
      w- z-30 flex justify-end"
     >
       <OutsideClickHandler onOutsideClick={() => setSidebar(false)}>
         <div
-          className={` w-[538px] bg-[#00588AB2] backdrop-blur-[27.1828px]
-           overflow-hidden h-screen px-[60px] pt-[57px] relative`}
+          className={` w-screen md:w-[538px] bg-[#00588AB2] backdrop-blur-[27.1828px]
+           h-screen px-11 md:px-[60px] pt-[40px] md:pt-[57px] relative`}
         >
           <div className="flex justify-end">
             <svg
@@ -43,38 +42,41 @@ export default function Sidebar({ sidebar, setSidebar }) {
               />
             </svg>
           </div>
-          <ul className="">
-            {menus.map((menu) => (
-              <li key={menu.id} className="mb-[70px]">
-                <Link href={menu.url}>
-                  <a
-                    className="font-semibold text-[24px]
-                    leading-7 text-white rounded-md px-4 py-3 "
-                  >
-                    {menu.name}
-                  </a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <hr className="borderr border-[#F2F2F2]" />
 
-          <ul className="">
-            {moreMenu.map((menu) => (
-              <li key={menu.id} className="my-[40px]">
-                <Link href={menu.url}>
-                  <a
-                    className="font-semibold text-[16px]
+          <div className="">
+            <ul className="">
+              {menus.map((menu) => (
+                <li key={menu.id} className="mb-[70px]">
+                  <Link href={menu.url}>
+                    <a
+                      className="font-semibold text-[24px]
+                    leading-7 text-white rounded-md px-4 py-3 "
+                    >
+                      {menu.name}
+                    </a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <hr className="borderr border-[#F2F2F2]" />
+
+            <ul className="">
+              {moreMenu.map((menu) => (
+                <li key={menu.id} className="my-[40px]">
+                  <Link href={menu.url}>
+                    <a
+                      className="font-semibold text-[16px]
                         leading-5 text-white rounded-md
                    px-4 py-3"
-                  >
-                    {menu.name}
-                  </a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <div className="absolute bottom-0 w-full">
+                    >
+                      {menu.name}
+                    </a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="fixed bottom-0 w-full">
             <div className="flex justify-between w-full relative">
               <img src="/assets/sidebar-send.svg" alt="bottom send" />
               <img
