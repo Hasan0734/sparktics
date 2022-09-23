@@ -152,13 +152,23 @@ export default function Work() {
                       # {work.type} / {work.name}
                     </h3>
                   </div>
-                  <div className="flex justify-center items-center">
-                    <img
-                      src={work.images[0]}
-                      className="w-full h-[230px] md:h-full"
-                      alt="work images"
-                    />
-                  </div>
+                  {work.type === "Logo" || work.type === "Branding" ? (
+                    <div className="flex justify-center items-center h-full">
+                      <img
+                        src={work.images[0]}
+                        className={``}
+                        alt="work images"
+                      />
+                    </div>
+                  ) : (
+                    <div className="flex justify-center items-center">
+                      <img
+                        src={work.images[0]}
+                        className={`w-full h-[230px] md:h-full`}
+                        alt="work images"
+                      />
+                    </div>
+                  )}
                 </div>
               ))}
 
