@@ -5,3 +5,12 @@
 body {
   font-family: 'Montserrat', sans-serif;
 }
+
+.member_info:hover .member_img {
+
+  background: #00588A;
+}
+
+.member_info:hover .member_detail {
+  display: block;
+}

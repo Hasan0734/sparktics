@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ContentMarketing,
   Growth,
@@ -7,6 +7,7 @@ import {
   Tag,
   Technology,
 } from "../../public/assets/Icon";
+import Service from "./Service";
 
 const services = [
   {
@@ -27,7 +28,7 @@ const services = [
     width: "258px",
     height: "258px",
     top: "164px",
-    left: "17.5%",
+    left: "17.3%",
     right: "",
     bottom: "",
   },
@@ -78,40 +79,16 @@ const services = [
 ];
 
 const OurServices = () => {
+
   return (
     <div
-      className="  h-[635px] py-[104px]"
+      className="  h-[635px] py-[104px] px-11"
       style={{ backgroundImage: "url('we-do-bg.png')" }}
     >
       <div className="relative ">
-        {services?.map(
-          ({ id, name, icon, width, height, top, bottom, left, right }) => (
-            <div
-              key={id}
-              className={`bg-[rgba(204, 239, 255, 0.7)] absolute
-               rounded-full flex justify-center items-center`}
-              style={{
-                background: "rgba(204, 239, 255, 0.7)",
-                height: height,
-                width: width,
-                top: top,
-                left: left,
-              }}
-            >
-              <div
-                className="bg-white p-3 w-[178px] h-[178px] rounded-full flex justify-center items-center"
-                style={{ boxShadow: "5px 8px 7px -3px rgba(0, 88, 138, 0.2)" }}
-              >
-                <div className="text-center">
-                  <div className="flex justify-center">{icon}</div>
-                  <h3 className="pt-2 font-bold text-[18px] leading-[27px] text-[#00588A]">
-                    {name}
-                  </h3>
-                </div>
-              </div>
-            </div>
-          )
-        )}
+        {services?.map((service) => (
+          <Service key={service.id} service={service} />
+        ))}
       </div>
     </div>
   );

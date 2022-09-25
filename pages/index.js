@@ -59,7 +59,7 @@ export default function Home() {
             What we do
           </h3>
         </div>
-        {/* <OurServices /> */}
+        <OurServices />
       </div>
       <OurProcess />
       <div className="max-w-[1448px] mx-auto px-6 md:px-[112px] bg-[#fff]">

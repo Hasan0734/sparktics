@@ -5,6 +5,14 @@ import Layout from "../components/Layout/Layout";
 import Modal from "../components/Modal/Modal";
 import Navbar from "../components/Navbar/Navbar";
 
+const items = [
+  { id: 1, name: "All", value: "all" },
+  { id: 2, name: "Logos", value: "logo" },
+  { id: 3, name: "Branding", value: "branding" },
+  { id: 4, name: "Explainer Videos", value: "video" },
+  { id: 5, name: "Websites", value: "website" },
+];
+
 export default function Work() {
   const [isOpen, setIsOpen] = useState(false);
   const [image, setImage] = useState("");
@@ -20,7 +28,12 @@ export default function Work() {
   return (
     <>
       {isOpen && (
-        <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+        <Modal
+          isOpen={trigger}
+          setIsOpen={setTrigger}
+          size={"max-w-[718px]"}
+          shadow={"drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"}
+        >
           <div className="flex justify-center items-center">
             <Image src={image} width={433} height={228} alt="work images" />
             {/* <img src={image} alt="modal image" /> */}
@@ -49,51 +62,21 @@ export default function Work() {
           </div>
           <div className="mt-8">
             <ul className="flex flex-wrap gap-3">
-              <li>
-                <button
-                  onClick={() => setSelectedType("all")}
-                  className="bg-[#00588A] rounded-full text-[16px]
-               text-white leading-[20px] font-semibold px-6 py-[10px]"
-                >
-                  All
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => setSelectedType("logo")}
-                  className="border rounded-full text-[16px]
-               text-[#00588A] leading-[20px] font-semibold px-5 py-[10px]"
-                >
-                  Logos
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => setSelectedType("branding")}
-                  className="border rounded-full text-[16px]
-               text-[#00588A] leading-[20px] font-semibold px-5 py-[10px]"
-                >
-                  Branding
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => setSelectedType("video")}
-                  className="border rounded-full text-[16px]
-               text-[#00588A] leading-[20px] font-semibold px-5 py-[10px]"
-                >
-                  Explainer Videos
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => setSelectedType("website")}
-                  className="border rounded-full text-[16px]
-               text-[#00588A] leading-[20px] font-semibold px-5 py-[10px]"
-                >
-                  Websites
-                </button>
-              </li>
+              {items?.map((item, i) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => setSelectedType(item.value)}
+                    className={`${
+                      selectedType === item.value
+                        ? "bg-[#00588A] text-white"
+                        : "text-[#00588A] border rounded-full"
+                    } rounded-full text-[16px]
+                leading-[20px] font-semibold px-6 py-[10px]`}
+                  >
+                    {item.name}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
           <div className="flex flex-wrap mt-20">
@@ -121,13 +104,23 @@ export default function Work() {
                         # {work.type} / {work.name}
                       </h3>
                     </div>
-                    <div className="flex justify-center items-center">
-                      <img
-                        src={work.images[0]}
-                        className="w-full h-[230px] md:h-full"
-                        alt="work images"
-                      />
-                    </div>
+                    {work.type === "Logo" || work.type === "Branding" ? (
+                      <div className="flex justify-center items-center h-full">
+                        <img
+                          src={work.images[0]}
+                          className={``}
+                          alt="work images"
+                        />
+                      </div>
+                    ) : (
+                      <div className="flex justify-center items-center">
+                        <img
+                          src={work.images[0]}
+                          className={`w-full h-[230px] md:h-full`}
+                          alt="work images"
+                        />
+                      </div>
+                    )}
                   </div>
                 ))}
             {selectedType === "all" &&

@@ -194,11 +194,111 @@ const AboutUs = () => {
                     />
                   </div>
                 </div>
-                <div className="mt-[76px] grid grid-cols-3 gap-y-16 gap-x-[320px]">
+
+                <div className="mt-[76px] hidden lg:grid grid-cols-3 gap-y-16 gap-x-[320px]">
                   {employee?.map((em) => (
                     <Employee key={em.id} employee={em} />
                   ))}
                 </div>
+
+                <div className="mt-[76px] grid grid-cols-2 lg:hidden gap-y-10 gap-x-3">
+                  {employee?.map((employee, i) =>
+                    i === 0 || i % 3 === 0 ? (
+                      <div
+                        key={employee.id}
+                        className="flex justify-center col-span-2"
+                      >
+                        <div className="">
+                          <div className="w-full flex justify-center">
+                            <div className="member_info  h-[100px] w-[100px] rounded-full">
+                              <div
+                                className={`member_img  bg-[#CCEFFFB2] duration-200 flex justify-center items-center cursor-pointer  h-full w-full rounded-full p-2`}
+                              >
+                                <div className="bg-white w-full h-full rounded-full flex justify-center items-center ">
+                                  <img
+                                    className="w-[39px] h-[51px]"
+                                    src={employee.image}
+                                    alt="member icon"
+                                  />
+                                </div>
+                              </div>
+                              <div className="absolute hidden member_detail duration-200 left-0">
+                                <div className="p-9 relative mt-3  rounded-md max-w-[345px]  z-20 mx-3  bg-white shadow-[4px_-1px_14px_rgba(0,88,138,0.2)]">
+                                  <div className="absolute w-10 h-10 bg-white -top-3 left-[45%] rounded-md rotate-45"></div>
+                                  <h1 className="font-bold text-[20px] leading-6 text-[#00588A]">
+                                    {employee.name} “ {employee.title}”
+                                  </h1>
+                                  <p className="font-semibold text-[16px] leading-6 text-[#00588A] my-3">
+                                    {employee.position}
+                                  </p>
+                                  <p className="font-normal text-[16px] leading-6 text-[#00588A]">
+                                    {employee?.describe}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="mt-6 text-center">
+                            <h2 className="font-bold text-[19.2px] leading-[23px] text-[#00588A]">
+                              Teja aka “ {employee.title}”
+                            </h2>
+                            <p className="font-semibold text-[12.8px] leading-[19px] text-[#00588A]">
+                              {employee.position}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <div
+                        key={employee.id}
+                        className="flex justify-center col-span-1"
+                      >
+                        <div className="relative">
+                          <div className="flex justify-center">
+                            <div className="member_info  h-[100px] w-[100px] rounded-full flex justify-center relative">
+                              <div
+                                className={`member_img bg-[#CCEFFFB2] duration-200 flex justify-center items-center cursor-pointer  h-full w-full rounded-full p-2`}
+                              >
+                                <div className="bg-white w-full h-full rounded-full flex justify-center items-center ">
+                                  <img
+                                    className="w-[39px] h-[51px]"
+                                    src={employee.image}
+                                    alt="member icon"
+                                  />
+                                </div>
+                              </div>
+                              <div className="absolute hidden member_detail duration-200 ">
+                                <div className="p-9 relative mt-3  rounded-md max-w-[345px]  z-20  bg-white shadow-[4px_-1px_14px_rgba(0,88,138,0.2)]">
+                                  <div className="absolute w-10 h-10 bg-white -top-3 left-[45%] rounded-md rotate-45"></div>
+                                  <h1 className="font-bold text-[20px] leading-6 text-[#00588A]">
+                                    {employee.name} “ {employee.title}”
+                                  </h1>
+                                  <p className="font-semibold text-[16px] leading-6 text-[#00588A] my-3">
+                                    {employee.position}
+                                  </p>
+                                  <p className="font-normal text-[16px] leading-6 text-[#00588A]">
+                                    {employee?.describe}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="mt-6 text-center">
+                            <h2 className="font-bold text-[14px] leading-[17px] text-[#00588A]">
+                              Teja aka “ {employee.title}”
+                            </h2>
+                            <p className="font-semibold text-[12px] leading-[16px] text-[#00588A]">
+                              {employee.position}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  )}
+                </div>
+
                 <div className="mt-[165px] text-center">
                   <p className="font-normal text-[20px] leading-[24px] text-[#00588A]">
                     Do you like to work with us ?

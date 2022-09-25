@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-import OutsideClickHandler from "react-outside-click-handler";
+import React from "react";
 
-const Employee = ({ employee }) => {
+const SMEmployee = ({ employee }) => {
   return (
     <div className="flex justify-center">
       <div className="relative">
@@ -56,4 +55,4 @@ const Employee = ({ employee }) => {
   );
 };
 
-export default Employee;
+export default SMEmployee;
