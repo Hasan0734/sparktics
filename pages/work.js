@@ -15,7 +15,7 @@ const items = [
 
 export default function Work() {
   const [isOpen, setIsOpen] = useState(false);
-  const [image, setImage] = useState("");
+  const [work, setWork] = useState({});
   const [works, setWorks] = useState([]);
   const [selectedType, setSelectedType] = useState("all");
 
@@ -25,18 +25,56 @@ export default function Work() {
       .then((data) => setWorks(data));
   }, []);
 
+  console.log(work);
   return (
     <>
       {isOpen && (
         <Modal
-          isOpen={trigger}
-          setIsOpen={setTrigger}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
           size={"max-w-[718px]"}
           shadow={"drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"}
+          center={'items-center'}
         >
-          <div className="flex justify-center items-center">
-            <Image src={image} width={433} height={228} alt="work images" />
-            {/* <img src={image} alt="modal image" /> */}
+          <div className="p-5">
+            <div className="flex justify-end">
+              <svg
+                onClick={() => setIsOpen(false)}
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-8 h-8 cursor-pointer"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </div>
+            <div className="px-5 pb-5">
+              <h2 className="text-[24px] font-semibold text-[#00588A]">
+                # {work.type} / {work.name}
+              </h2>
+              <div className="flex justify-center items-center max-h-[350px] mt-3">
+                {work.type === "Video" ? (
+                  <div>
+                    <video className="w-full h-full" autoPlay controls>
+                      <source src={work?.url} type="video/mp4" />
+                      <source src={work?.url} type="video/ogg" />
+                    </video>
+                  </div>
+                ) : (
+                  <img
+                    className="w-full h-full rounded-md"
+                    src={work?.images[0]}
+                    alt="modal image"
+                  />
+                )}
+              </div>
+            </div>
           </div>
         </Modal>
       )}
@@ -86,7 +124,7 @@ export default function Work() {
                 .map((work) => (
                   <div
                     onClick={() => {
-                      setImage(work.images[0]);
+                      setWork(work);
                       setIsOpen(true);
                     }}
                     key={work.id}
@@ -127,7 +165,7 @@ export default function Work() {
               works.map((work) => (
                 <div
                   onClick={() => {
-                    setImage(work.images[0]);
+                    setWork(work);
                     setIsOpen(true);
                   }}
                   key={work.id}

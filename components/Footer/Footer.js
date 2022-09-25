@@ -32,6 +32,7 @@ const Footer = () => {
           setIsOpen={setTrigger}
           size={"max-w-[718px]"}
           shadow={"drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"}
+          center="items-start"
         >
           {!completed && (
             <>
